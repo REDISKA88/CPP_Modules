@@ -1,8 +1,9 @@
-NAME    = zombieHorde
+NAME    = violence
 
 SRC     = main.cpp \
- 		Zombie.cpp \
- 		ZombieHorde.cpp
+		  humanA.cpp \
+		  humanB.cpp \
+		  weapon.cpp
 
 OBJ     = $(SRC:.cpp=.o)
 

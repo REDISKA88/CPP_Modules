@@ -14,6 +14,7 @@ RM      = rm
 RFLAGS  = -rf
 
 all: $(NAME)
+	@echo "./$(NAME) created "
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
