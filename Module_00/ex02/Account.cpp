@@ -102,12 +102,7 @@ void Account::_displayTimestamp(void)
 	struct tm * timeinfo;
 	time (&rawtime);
 	timeinfo = localtime(&rawtime);
-	std::cout << std::setfill('0') << "[" << (timeinfo->tm_year + 1900)
-			  << std::setw(2) << timeinfo->tm_mon
-			  << std::setw(2) << timeinfo->tm_mday << "_"
-			  << std::setw(2) << timeinfo->tm_hour
-			  << std::setw(2) << timeinfo->tm_min
-			  << std::setw(2) << timeinfo->tm_sec << "] ";
+	std::cout << "[" << (timeinfo->tm_year) << timeinfo->tm_mon << timeinfo->tm_mday << "_" << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << "] ";
 }
 
 Account::~Account(void)
