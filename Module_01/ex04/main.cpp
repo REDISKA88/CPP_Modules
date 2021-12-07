@@ -1,5 +1,4 @@
 #include "replace.hpp"
-
 int main(int argc, char **argv){
 
 	std::string s1;
@@ -20,16 +19,17 @@ int main(int argc, char **argv){
 	if (!in.is_open())
 		return -1;
 	out.open(f + ".replace");
-	while (std::getline(in, buf, '\0'))
+	std::getline(in, buf, '\0');
+	size_t pos = 0;
+	pos = buf.find(s1, pos);
+	while (pos != std::string::npos)
 	{
-		size_t pos = 0;
-		while ((pos = buf.find(s1, pos)) != std::string::npos)
-		{
-			buf.replace(pos, s1.length(), s2);
-			pos = pos + s1.length();
-		}
-		out << buf;
+		buf.erase (pos, s1.length());
+		buf.insert(pos, s2);
+		pos = buf.find(s1, pos + s2.length() - 1);
 	}
+
+	out << buf;
 	in.close();
 	out.close();
 	return (0);
