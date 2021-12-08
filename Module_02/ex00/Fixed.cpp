@@ -1,5 +1,5 @@
 #include "Fixed.hpp"
-Fixed::fixedPointValue = 8;
+const int Fixed::numOfBits = 8;
 
 Fixed::Fixed(){
 	fixedPointValue = 0;
@@ -19,10 +19,12 @@ void Fixed::setRawBits(const int raw) {
 
 Fixed &Fixed::operator=(const Fixed & other) {
 	this->setRawBits(other.getRawBits());
+	std::cout << "Assignation operator called" << std::endl;
 	return *this;
 }
 
 Fixed::Fixed(const Fixed& other): fixedPointValue(other.getRawBits()){
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::~Fixed() {
