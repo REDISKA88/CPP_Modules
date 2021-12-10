@@ -25,6 +25,10 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap &D) {
 	return *this;
 }
 
+void DiamondTrap::highFivesGuys() {
+	std::cout << "DiamondTrap say highFivesGuys" << std::end
+}
+
 void DiamondTrap::attack(const std::string &target) {
 	FragTrap::attack(target);
 }

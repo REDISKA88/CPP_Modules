@@ -16,6 +16,7 @@ public:
 
 	void whoAmI();
 	void attack(std::string const & target);
+	void highFivesGuys();
 	~DiamondTrap();
 };
 
