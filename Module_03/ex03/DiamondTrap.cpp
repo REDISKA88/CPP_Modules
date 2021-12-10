@@ -11,11 +11,10 @@ DiamondTrap::DiamondTrap(DiamondTrap &copy) {
 }
 
 void DiamondTrap::whoAmI() {
-	std::cout << "I am DiamondTrap " << DiamondTrap::name << std::endl;
-	std::cout << "And ClapTrap " << ClapTrap::getName() << std::endl;
+	std::cout << "I am DiamondTrap " << DiamondTrap::name  << " And ClapTrap " << ClapTrap::getName() << std::endl;
 }
 DiamondTrap &DiamondTrap::operator=(DiamondTrap &D) {
-	if (this != &F)
+	if (this != &D)
 	{
 		DiamondTrap::name = D.name;
 		this->energy = D.energy;
@@ -26,7 +25,7 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap &D) {
 }
 
 void DiamondTrap::highFivesGuys() {
-	std::cout << "DiamondTrap say highFivesGuys" << std::end
+	std::cout << "DiamondTrap say highFivesGuys" << std::endl;
 }
 
 void DiamondTrap::attack(const std::string &target) {
