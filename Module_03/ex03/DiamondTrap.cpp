@@ -32,5 +32,5 @@ void DiamondTrap::attack(const std::string &target) {
 	FragTrap::attack(target);
 }
 DiamondTrap::~DiamondTrap(){
-	std::cout << "DiamondTrap "<< name << " *Dies From Cringe*" << std::endl;
+	std::cout << "DiamondTrap "<<" *Dies From Cringe*" << std::endl;
 }

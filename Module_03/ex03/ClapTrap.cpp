@@ -51,5 +51,5 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << "ClapTrap " << name << " repaired by " << amount << " energy!" << std::endl;
 }
 ClapTrap::~ClapTrap(){
-	std::cout << name << " *Dies From Cringe*" << std::endl;
+	std::cout << "ClapTrap *Dies From Cringe*" << std::endl;
 }

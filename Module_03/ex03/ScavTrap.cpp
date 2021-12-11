@@ -37,5 +37,5 @@ void ScavTrap::guardGate() {
 }
 
 ScavTrap::~ScavTrap(){
-	std::cout << "ScavTrap "<< name << " *Dies From Cringe*" << std::endl;
+	std::cout << "ScavTrap "<< " *Dies From Cringe*" << std::endl;
 }
