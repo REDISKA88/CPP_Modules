@@ -1,5 +1,5 @@
 #include "Cat.hpp"
-Cat::Cat() : Animal("Cat")){
+Cat::Cat() : Animal("Cat"){
 	this->brain = new Brain();
 	std::cout << "Cat was created" << std::endl;
 }
