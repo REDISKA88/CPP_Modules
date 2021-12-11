@@ -5,5 +5,5 @@ int main(){
 	ClapTrap Two("Francis");
 
 	One.attack(Two.getName());
-	Two.takeDamage(One.GetAD());
+	Two.takeDamage(10);
 }

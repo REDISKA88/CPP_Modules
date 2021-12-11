@@ -1,7 +1,12 @@
-NAME    =  fixed2
+NAME    =  PURIFY_IT
 
 SRC     = main.cpp  \
-		  Fixed.cpp
+		  Animal.cpp \
+		  Cat.cpp \
+		  Dog.cpp \
+		  WrongAnimal.cpp \
+		  WrongCat.cpp \
+		  Brain.cpp
 
 OBJ     = $(SRC:.cpp=.o)
 

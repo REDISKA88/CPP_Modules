@@ -17,7 +17,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-	@$(RM) $(RFLAGS) $(OBJ)
 
 .cpp.o:
 	@$(CC) $(CFLAGS) -c $< -o $@
