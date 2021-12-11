@@ -22,7 +22,7 @@ public:
 	int getEnegry();
 	int getHitpoints();
 	int getAttackDamage();
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 };
 
