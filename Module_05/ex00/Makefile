@@ -1,4 +1,4 @@
-NAME    =  abstractClass
+NAME    =  bureaucrat
 
 SRC     = main.cpp  \
 		  Animal.cpp \
