@@ -4,10 +4,9 @@
 
 int main(){
 
-	Animal* A = new Animal();
+	//Animal* A = new Animal();
 	Animal* C = new Cat();
 	Animal* D = new Dog();
-	WrongAnimal* W = new WrongCat();
 
 	Animal *animals[100];
 
@@ -28,16 +27,11 @@ int main(){
 	delete j;//should not create a leak
 	delete i;
 
-	A->makeSound();
 	C->makeSound();
 	D->makeSound();
-	W->makeSound();
 
-
-	delete A;
 	delete C;
 	delete D;
-	delete W;
 
 	return 0;
 }

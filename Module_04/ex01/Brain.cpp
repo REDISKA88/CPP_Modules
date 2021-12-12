@@ -16,6 +16,9 @@ Brain &Brain::operator=(const Brain &B) {
 		for(int i = 0; i < 100; i++)
 			_ideas[i] = B._ideas[i];
 	}
+	std::cout << "___________________________" << std::endl;
+	std::cout << "Brain copy operator called" << std::endl;
+	std::cout << "___________________________" << std::endl;
 	return *this;
 }
 Brain::~Brain(){

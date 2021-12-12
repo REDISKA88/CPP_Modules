@@ -7,7 +7,7 @@ int main(){
 	Animal* A = new Animal();
 	Animal* C = new Cat();
 	Animal* D = new Dog();
-	WrongAnimal* W = new WrongCat();
+	//WrongAnimal* W = new WrongCat();
 
 	Animal *animals[100];
 
@@ -31,13 +31,13 @@ int main(){
 	A->makeSound();
 	C->makeSound();
 	D->makeSound();
-	W->makeSound();
+	//W->makeSound();
 
 
 	delete A;
 	delete C;
 	delete D;
-	delete W;
+	//delete W;
 
 	return 0;
 }

@@ -1,4 +1,4 @@
-NAME    =  PURIFY_IT
+NAME    =  worldOnFire
 
 SRC     = main.cpp  \
 		  Animal.cpp \

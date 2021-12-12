@@ -13,7 +13,7 @@ Cat &Cat::operator=(const Cat &C) {
 	if (this != &C)
 	{
 		this->_type = C._type;
-		this->brain = new Brain(*C.brain);
+		*(this->brain) = *(C.brain);
 	}
 
 	return *this;

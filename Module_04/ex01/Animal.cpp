@@ -1,6 +1,7 @@
 #include "Animal.hpp"
 
 Animal::Animal() {
+	_type = "";
 	std::cout << "The animal was created" << std::endl;
 }
 
@@ -26,7 +27,7 @@ std::string Animal::getType() const {
 }
 
 void Animal::makeSound() const {
-	std::cout << "Some animal makes some sound" << std::endl;
+	std::cout << "Class animal cannot make sound" << std::endl;
 }
 
 Animal::~Animal(){

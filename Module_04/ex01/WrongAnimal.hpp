@@ -12,9 +12,9 @@ public:
 
 	void setType(std::string type);
 	std::string getType() const;
-	virtual void makeSound() const;
+	void makeSound() const;
 
-	virtual ~WrongAnimal();
+	~WrongAnimal();
 };
 
 
