@@ -1,35 +1,35 @@
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
+
 int main() {
 
-	Bureaucrat	B(100);
+	Bureaucrat	B( 100 );
+	Form		F( "new form", 1, 1 );
+	Form		Form( "FORM 2", 150, 2 );
 
+	std::cout << Form << std::endl;
 	try {
-		Bureaucrat A(170);
-	}
-	catch (Bureaucrat::GradeTooHighException &e) {
-		std::cout << e.what() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooLowException &e) {
-		std::cout << e.what() << std::endl;
-	}
 
-	try {
-		B.decrementGrade();
+		Form.signForm();
 	}
-	catch (Bureaucrat::GradeTooHighException &e) {
-		std::cout << e.what() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooLowException &e) {
+	catch (Form::GradeTooLowException &e) {
+
 		std::cout << e.what() << std::endl;
 	}
 
+	std::cout << F << std::endl;
+
 	try {
-		B.incrementGrade();
+
+		Form	F2( "try form", 200, 2 );
+
+		std::cout << F2 << std::endl;
 	}
-	catch (Bureaucrat::GradeTooHighException &e) {
+	catch (Form::GradeTooHighException &e) {
+
 		std::cout << e.what() << std::endl;
 	}
-	catch (Bureaucrat::GradeTooLowException &e) {
+	catch (Form::GradeTooLowException &e) {
+
 		std::cout << e.what() << std::endl;
 	}
 	return 0;
