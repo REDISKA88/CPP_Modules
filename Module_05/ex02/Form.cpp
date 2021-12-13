@@ -1,9 +1,5 @@
 #include "Form.hpp"
 
-Form::Form():  _is_signed(false), _signGrade(1), _executeGrade(1), _name("Default Form") {
-	std::cout << "Form was created" << std::endl;
-}
-
 std::string Form::getName() const {
 	return _name;
 }
@@ -20,7 +16,11 @@ int Form::getExecuteGrade() const {
 	return _executeGrade;
 }
 
-Form::Form(int signGrade, int executeGrade, std::string name) {
+Form::Form():  _is_signed(false), _signGrade(1), _executeGrade(1), _name("Default Form") {
+	std::cout << "Form was created" << std::endl;
+}
+
+Form::Form(int signGrade, int executeGrade, std::string name):_is_signed(false), _signGrade(1), _executeGrade(1), _name(name){
 
 	if (signGrade < 1)
 		throw Form::GradeTooLowException();
@@ -31,9 +31,6 @@ Form::Form(int signGrade, int executeGrade, std::string name) {
 	if (executeGrade > 150)
 		throw Form::GradeTooHighException();
 
-	_name = name;
-	_signGrade = signGrade;
-	_executeGrade = executeGrade;
 }
 
 void Form::beSigned(const Bureaucrat &B) {
@@ -43,18 +40,14 @@ void Form::beSigned(const Bureaucrat &B) {
 	_is_signed = true;
 }
 
-Form::Form(const Form &F) {
+Form::Form(const Form &F): _is_signed(F._is_signed), _signGrade(F._signGrade), _executeGrade(F._executeGrade), _name(F._name) {
 	*this = F;
 }
 
 Form &Form::operator=(const Form &F) {
-	if (this != &F) {
-		_is_signed = F.getIsSigned();
-		_signGrade = F.getSignGrade();
-		_executeGrade = F.getExecuteGrade();
-		_name = F.getName();
-	}
-	return *this;
+	if (this != &F)
+		_is_signed = F._is_signed;
+	return (*this);
 }
 
 Form::~Form() {
@@ -73,16 +66,18 @@ std::ostream& operator<<(std::ostream&out, Form const &F) {
 	<<  " sign grade: " << F.getSignGrade()
 	<< " execute grade: " << F.getExecuteGrade()
 	<< std::endl;
+return out;
 }
 
 const char *Form::GradeTooHighException::what() const throw() {
 	return "The grade is too high for the form";
 }
 
+
 const char *Form::GradeTooLowException::what() const throw() {
 	return "The grade is too low for the form";
 }
 
-const char *Form::notSignForm::what() const throw() {
-	return "This form not signed";
+const char *Form::notSignFormException::what() const throw() {
+	return "Form is not signed";
 }

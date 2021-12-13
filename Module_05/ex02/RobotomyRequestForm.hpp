@@ -3,7 +3,7 @@
 
 #include "Form.hpp"
 
-class RobotomyRequestForm : public Form{
+class RobotomyRequestForm :  public  Form{
 
 public:
 	RobotomyRequestForm(std::string target);

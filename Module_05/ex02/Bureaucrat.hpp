@@ -5,6 +5,7 @@
 #include <exception>
 #include "Form.hpp"
 
+class Form;
 class Bureaucrat {
 
 private:
@@ -18,12 +19,12 @@ public:
 
 	std::string getName() const;
 	int getGrade() const;
-	void setName(const std::string);
- 	void setGrade(int grade);
+	void setGrade(int grade);
 	void incrementGrade();
 	void decrementGrade();
+	void signForm(Form &);
 
-	void executeForm(Form const & form);
+	void				executeForm(Form const & form);
 
 	class GradeTooHighException: public std::exception {
 

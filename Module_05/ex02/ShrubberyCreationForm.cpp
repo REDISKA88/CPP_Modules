@@ -8,12 +8,16 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &C) {
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &C) {
+	if (this != &C)
+		return *this;
 	return *this;
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
 	if(this->getIsSigned() == false)
-		throw ShrubberyCreationForm::Form::notSignForm();
+		throw ShrubberyCreationForm::Form::notSignFormException();
+	if (executor.getGrade() > this->getExecuteGrade())
+		throw ShrubberyCreationForm::Form::GradeTooHighException();
 
 	std::ofstream file;
 	file.open(getName() + "_shrubbery");

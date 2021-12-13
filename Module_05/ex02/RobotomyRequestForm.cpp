@@ -1,5 +1,5 @@
 #include "RobotomyRequestForm.hpp"
-#include <cstdlib>.
+#include <cstdlib>
 RobotomyRequestForm::RobotomyRequestForm(std::string target): Form(72, 45, target) {
 	std::cout << "Robotomy Request Form constructor called" << std::endl;
 }
@@ -9,12 +9,16 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &C) {
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &C) {
+	if (this != &C)
+		return *this;
 	return *this;
 }
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
 	if(this->getIsSigned() == false)
-		throw RobotomyRequestForm::Form::notSignForm();
+		throw RobotomyRequestForm::Form::notSignFormException();
+	if (executor.getGrade() > this->getExecuteGrade())
+		throw RobotomyRequestForm::Form::GradeTooHighException();
 	int v1;
 	v1 = rand() % 100;
 	std::cout <<"driiiiiiiiiiiiill" << std::endl;

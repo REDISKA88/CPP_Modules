@@ -3,11 +3,23 @@
 #include "ShrubberyCreationForm.hpp"
 
 int main() {
-	Bureaucrat B(1, "Sean");
-	Form		F( "new form", 1, 1 );
-	PresidentialPardonForm PF("Yun and Yang ");
-
-
-
+	try {
+		Bureaucrat b(1, "Retsu");
+		Form *f = new ShrubberyCreationForm("tree");
+		f->beSigned(b);
+		b.executeForm(*f);
+	}
+	catch (const std::exception& e){
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		Bureaucrat b(1,"Chun-Li");
+		Form *f = new RobotomyRequestForm("mrRobot");
+		f->beSigned(b);
+		b.executeForm(*f);
+	}
+	catch (const std::exception& e){
+		std::cout << e.what() << std::endl;
+	}
 	return 0;
 }
