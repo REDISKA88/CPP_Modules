@@ -2,18 +2,18 @@
 #define FORM_HPP
 
 #include "Bureaucrat.hpp"
-class Bureaucrat;
+
 class Form {
 
 private:
 	bool _is_signed;
-	const int _signGrade;
-	const  int _executeGrade;
+	int const _signGrade;
+	int const _executeGrade;
 	std::string const _name;
 
 public:
 	Form();
-	Form(const int signGrade, const int executeGrade, std::string name);
+	Form(int signGrade, int executeGrade, std::string name);
 	Form(const Form&);
 	Form& operator=(const Form&);
 
@@ -22,6 +22,7 @@ public:
 	int getSignGrade() const;
 	int getExecuteGrade() const;
 
+	virtual void execute(Bureaucrat const & executor) const = 0;
 
 	void beSigned(Bureaucrat const &B);
 	void setName(const std::string);
@@ -33,6 +34,10 @@ public:
 	};
 
 	class GradeTooLowException: public std::exception {
+		virtual const char *what() const throw();
+	};
+
+	class notSignForm: public std::exception {
 		virtual const char *what() const throw();
 	};
 

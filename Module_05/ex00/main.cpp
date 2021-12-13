@@ -1,36 +1,17 @@
 #include "Bureaucrat.hpp"
-int main() {
-
-	Bureaucrat	B(100);
-
-	try {
-		Bureaucrat A(170);
+int main(){
+	try
+	{
+		Bureaucrat b(150, "Chun-Li");
+		std::cout << b << std::endl;
+		b.decrementGrade();
+		std::cout << b << std::endl;
+		b.incrementGrade();
+		std::cout << b << std::endl;
 	}
-	catch (Bureaucrat::GradeTooHighException &e) {
+	catch (std::exception& e)
+	{
 		std::cout << e.what() << std::endl;
 	}
-	catch (Bureaucrat::GradeTooLowException &e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	try {
-		B.decrementGrade();
-	}
-	catch (Bureaucrat::GradeTooHighException &e) {
-		std::cout << e.what() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooLowException &e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	try {
-		B.incrementGrade();
-	}
-	catch (Bureaucrat::GradeTooHighException &e) {
-		std::cout << e.what() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooLowException &e) {
-		std::cout << e.what() << std::endl;
-	}
-	return 0;
+	return (0);
 }

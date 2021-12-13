@@ -1,35 +1,15 @@
 #include "Form.hpp"
 
 int main() {
-
-	Bureaucrat	B( 100 );
-	Form		F( "new form", 1, 1 );
-	Form		Form( "FORM 2", 150, 2 );
-
-	std::cout << Form << std::endl;
 	try {
+		Bureaucrat b1(1, "Lee");
+		Form f1(100, 150, "Hong Kong movie");
+		std::cout << b1 << std::endl;
 
-		Form.signForm();
+		b1.signForm(f1);
+		f1.beSigned(b1);
 	}
-	catch (Form::GradeTooLowException &e) {
-
-		std::cout << e.what() << std::endl;
-	}
-
-	std::cout << F << std::endl;
-
-	try {
-
-		Form	F2( "try form", 200, 2 );
-
-		std::cout << F2 << std::endl;
-	}
-	catch (Form::GradeTooHighException &e) {
-
-		std::cout << e.what() << std::endl;
-	}
-	catch (Form::GradeTooLowException &e) {
-
+	catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
 	return 0;
