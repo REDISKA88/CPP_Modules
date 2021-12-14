@@ -14,9 +14,7 @@ Sub-typing polymorphism, Abstract classes and interfaces. <br>
 <p><a href="https://github.com/REDISKA88/CPP_Modules/tree/main/Module_05"> <h4> Module 05: </h4> </a></p> 
 Nested classes, exceptions. <br>
 <p><a href="https://github.com/REDISKA88/CPP_Modules/tree/main/Module_06"> <h4> Module 06: </h4> </a></p> 
-C type conversions, C type reinterpretation, C type qualifier reinterpretation; <br>
-Upcast & downcast, Static cast, Dynamic cast, Reinterpret cast, Const cast; <br>
-Cast operators, Explicit keyword. <br>
+Upcast & downcast, Static cast, Dynamic cast; <br> Reinterpret cast, Const cast Cast operators, Explicit keyword. <br>
 <p><a href="https://github.com/REDISKA88/CPP_Modules/tree/main/Module_07"> <h4> Module 07: </h4> </a></p> 
 C parametric macros, templates, default type, specialization. <br>
 <p><a href="https://github.com/REDISKA88/CPP_Modules/tree/main/Module_08"> <h4> Module 08: </h4> </a></p> 
