@@ -1,2 +1,3 @@
-<h3>Short descriptions of C++ module 04: </h3>
-Sub-typing polymorphism, Abstract classes and interfaces. <br>
+<h3>Module content: </h3>
+Sub-typing polymorphism<br>
+Abstract classes and interfaces <br>
