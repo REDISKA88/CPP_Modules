@@ -1,2 +1,4 @@
-<h3>Short descriptions of C++ module 02: </h3>
-Ad-hoc polymorphism, Operator overload, Canonical form. <br>
+<h3>Module content: </h3>
+ Ad-hoc polymorphism<br>
+Operator overload<br>
+Canonical form<br>
