@@ -9,7 +9,9 @@ void span::addNumber(int i) {
 		int_vector.push_back(i);
 }
 int span::longestSpan() const {
-	return (*std::max_element(int_vector.begin(), int_vector.end() - *std::min_element(int_vector.begin(), int_vector.end())));
+	int  max = *std::max_element(int_vector.begin(), int_vector.end());
+	int min = *std::min_element(int_vector.begin(), int_vector.end());
+	return max - min;
 }
 
 int span::shortestSpan() const {
